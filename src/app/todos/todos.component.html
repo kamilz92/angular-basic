@@ -1,0 +1,20 @@
+<h3>Todos</h3>
+
+<form>
+  <label>Filter Todos</label>
+  <input
+    placeholder="Search todos..."
+    name="searchTerm"
+    [(ngModel)]="searchTerm"
+  />
+</form>
+
+@if (loading()) {
+<p>Loading...</p>
+} @else {
+<ul>
+  @for (todo of todoItems() | filterTodos : searchTerm(); track todo.id) {
+  <app-todo-item (todoToggled)="todoToggled($event)" [todo]="todo" />
+  }
+</ul>
+}

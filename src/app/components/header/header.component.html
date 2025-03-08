@@ -1,0 +1,18 @@
+<header>
+  <div class="wrapper">
+    <div class="logo">{{ titleSignal() }}</div>
+    <nav>
+      <ul>
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li><a routerLink="/todos" routerLinkActive="active-link">Todos</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
